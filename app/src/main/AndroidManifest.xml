@@ -14,7 +14,11 @@
         <activity
             android:name=".activity.MangaViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_manga_view">
+            android:label="@string/title_activity_manga_view" >
+        </activity>
+        <activity
+            android:name=".activity.MainActivity2Activity"
+            android:label="@string/title_activity_main_activity2" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

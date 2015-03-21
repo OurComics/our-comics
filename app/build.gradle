@@ -42,4 +42,5 @@ dependencies {
     compile 'com.github.gabrielemariotti.cards:cardslib-extra-dragdrop:2.0.1'
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.android.support:support-v4:21.0.3'
+    compile 'it.sephiroth.android.library.imagezoom:imagezoom:+'
 }

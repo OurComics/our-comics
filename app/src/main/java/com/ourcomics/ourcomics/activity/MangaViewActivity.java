@@ -15,6 +15,7 @@ import android.view.View;
 import com.ourcomics.ourcomics.R;
 import com.ourcomics.ourcomics.adapter.MyFragmentStatePagerAdapter;
 
+import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 /**
@@ -58,8 +59,8 @@ public class MangaViewActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_manga_view);
+        ButterKnife.inject(this);
         viewPager.setAdapter(
                 new MyFragmentStatePagerAdapter(getSupportFragmentManager()));
     }

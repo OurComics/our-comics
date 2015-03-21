@@ -14,21 +14,24 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import it.sephiroth.android.library.imagezoom.ImageViewTouch;
 
-public class Fragment0 extends Fragment {
+/**
+ * Created by atsuhirotsuruta on 15/03/21.
+ */
+public class Fragment2 extends Fragment {
 
     @InjectView(R.id.photo)
-    ImageViewTouch photo;
+    ImageViewTouch photo2;
 
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_manga_view0, null);
+        View view = inflater.inflate(R.layout.fragment_manga_view2, null);
         ButterKnife.inject(this, view);
-        Matrix matrix = photo.getDisplayMatrix();
         Drawable bitmap = getResources().getDrawable(R.drawable.bla);
-        photo.setImageDrawable(bitmap);
+        photo2.setImageDrawable(bitmap);
         return view;
     }
 
 }
+

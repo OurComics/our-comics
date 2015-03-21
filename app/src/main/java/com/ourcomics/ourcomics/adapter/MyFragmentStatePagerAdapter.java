@@ -5,6 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.ourcomics.ourcomics.fragment.Fragment0;
+import com.ourcomics.ourcomics.fragment.Fragment1;
+import com.ourcomics.ourcomics.fragment.Fragment2;
 import com.ourcomics.ourcomics.fragment.MangaViewFragment;
 
 /**
@@ -23,9 +25,9 @@ public class MyFragmentStatePagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return new Fragment0();
             case 1:
-                return new Fragment0();
+                return new Fragment1();
             default:
-                return new Fragment0();
+                return new Fragment2();
         }
 
     }
