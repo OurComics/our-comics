@@ -29,6 +29,8 @@ public class GridListViewAdapter extends BaseAdapter {
     private static class ViewHolder {
         public ImageView iconView;
         public TextView titleTextView;
+        public TextView story;
+        public TextView info;
     }
 
     public GridListViewAdapter(Context context) {
@@ -56,11 +58,14 @@ public class GridListViewAdapter extends BaseAdapter {
             holder = new ViewHolder();
             holder.iconView = (ImageView)convertView.findViewById(R.id.icon);
             holder.titleTextView = (TextView)convertView.findViewById(R.id.title);
+            holder.story = (TextView) convertView.findViewById(R.id.story_num);
+            holder.info = (TextView) convertView.findViewById(R.id.story_info);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder)convertView.getTag();
         }
 
+        
         holder.iconView.setImageResource(mHueIdArray[0]);
         holder.titleTextView.setText(mHueArray[position]);
 
