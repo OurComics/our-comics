@@ -26,7 +26,7 @@ public class MainActivity2Activity extends ActionBarActivity {
         ButterKnife.inject(this);
         viewPager.setAdapter(
                 new MyFragmentStatePagerAdapter(getSupportFragmentManager()));
-        viewPager.setCurrentItem(2);
+        viewPager.setCurrentItem(3);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
     }

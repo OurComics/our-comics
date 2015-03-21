@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import com.ourcomics.ourcomics.fragment.Fragment0;
 import com.ourcomics.ourcomics.fragment.Fragment1;
 import com.ourcomics.ourcomics.fragment.Fragment2;
+import com.ourcomics.ourcomics.fragment.Fragment3;
 import com.ourcomics.ourcomics.fragment.MangaViewFragment;
 
 /**
@@ -26,15 +27,17 @@ public class MyFragmentStatePagerAdapter extends FragmentStatePagerAdapter {
                 return new Fragment0();
             case 1:
                 return new Fragment1();
-            default:
+            case 2:
                 return new Fragment2();
+            default:
+                return new Fragment3();
         }
 
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 
     @Override
