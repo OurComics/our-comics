@@ -5,9 +5,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.gc.materialdesign.views.ButtonRectangle;
 import com.ourcomics.ourcomics.R;
 
+import butterknife.InjectView;
+import butterknife.OnClick;
+
 public class RegisterActivity extends ActionBarActivity {
+
+    @OnClick(R.id.ok)
+    void finishActivity() {
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

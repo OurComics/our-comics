@@ -65,7 +65,7 @@ public class GridListViewAdapter extends BaseAdapter {
             holder = (ViewHolder)convertView.getTag();
         }
 
-        
+
         holder.iconView.setImageResource(mHueIdArray[0]);
         holder.titleTextView.setText(mHueArray[position]);
 
