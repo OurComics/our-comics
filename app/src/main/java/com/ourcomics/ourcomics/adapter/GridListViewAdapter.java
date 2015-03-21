@@ -18,11 +18,25 @@ public class GridListViewAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mLayoutInflater;
     private String[] mHueArray = {
-            "ブラックジャックによろしく　１巻", "ブラックジャックによろしく　2巻", "ブラックジャックによろしく　3巻", "ブラックジャックによろしく　4巻",
-            "ブラックジャックによろしく　5巻", "ブラックジャックによろしく　6巻", "ブラックジャックによろしく　7巻", "ブラックジャックによろしく　8巻",
-            "ブラックジャックによろしく　8巻", "ブラックジャックによろしく　9巻", "ブラックジャックによろしく　10巻", "ブラックジャックによろしく　11巻",
-            "ブラックジャックによろしく　12巻", "ブラックジャックによろしく　13巻"
+            "ブラックジャックによろしく", "ブラックジャックによろしく","ブラックジャックによろしく","ブラックジャックによろしく","ブラックジャックによろしく",
+            "ブラックジャックによろしく","ブラックジャックによろしく","ブラックジャックによろしく","ブラックジャックによろしく","ブラックジャックによろしく",
+            "ブラックジャックによろしく","ブラックジャックによろしく","ブラックジャックによろしく"
     };
+
+    private String[] storyArray = {
+            "1話", "2話", "3話", "4話","5話",
+            "6話", "7話", "8話", "9話","10話",
+            "11話", "12話", "13話"
+
+    };
+
+    private String[] infoArray = {
+            "佐藤秀峰","佐藤秀峰","佐藤秀峰","佐藤秀峰","佐藤秀峰",
+            "佐藤秀峰","佐藤秀峰","佐藤秀峰","佐藤秀峰","佐藤秀峰",
+            "佐藤秀峰","佐藤秀峰","佐藤秀峰"
+    };
+
+
     private Integer[] mHueIdArray = {
             R.drawable.bla
     };
@@ -68,6 +82,8 @@ public class GridListViewAdapter extends BaseAdapter {
         
         holder.iconView.setImageResource(mHueIdArray[0]);
         holder.titleTextView.setText(mHueArray[position]);
+        holder.story.setText(storyArray[position]);
+        holder.info.setText(infoArray[position]);
 
         return convertView;
     }
