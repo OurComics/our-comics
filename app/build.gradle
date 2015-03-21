@@ -43,4 +43,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.android.support:support-v4:21.0.3'
     compile 'it.sephiroth.android.library.imagezoom:imagezoom:+'
+    compile 'me.drakeet.materialdialog:library:1.2.2'
+    compile 'com.github.navasmdc:MaterialDesign:1.+@aar'
 }

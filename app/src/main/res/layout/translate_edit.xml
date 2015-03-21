@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="翻訳"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:textColor="#f39c12" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp" />
+
+    <com.gc.materialdesign.views.ButtonRectangle
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="決定"
+        android:id="@+id/buttonRectangle"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

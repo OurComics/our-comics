@@ -1,7 +1,5 @@
 package com.ourcomics.ourcomics.fragment;
 
-import android.graphics.Matrix;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,13 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.gc.materialdesign.views.ButtonRectangle;
 import com.ourcomics.ourcomics.R;
+
+import java.util.zip.Inflater;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
 import it.sephiroth.android.library.imagezoom.ImageViewTouch;
+import me.drakeet.materialdialog.MaterialDialog;
 
 /**
  * Created by atsuhirotsuruta on 15/03/21.
@@ -40,23 +42,37 @@ public class Fragment2 extends Fragment {
     ImageView frame4;
 
     @OnLongClick(R.id.frame_1)
-    void transLate1() {
-
-    }
-
-    @OnLongClick(R.id.frame_2)
-    void transLate2() {
-
+    boolean transLate1() {
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View view = inflater.inflate(R.layout.translate_edit, null);
+        ButtonRectangle okButton = (ButtonRectangle) view.findViewById(R.id.buttonRectangle);
+        final MaterialDialog mMaterialDialog = new MaterialDialog(getActivity())
+                .setView(view);
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mMaterialDialog.dismiss();
+            }
+        });
+        mMaterialDialog.show();
+        return true;
     }
 
     @OnLongClick(R.id.frame_3)
-    void transLate3() {
-
-    }
-
-    @OnLongClick(R.id.frame_4)
-    void transLate4() {
-
+    boolean transLate3() {
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View view = inflater.inflate(R.layout.translate_edit, null);
+        ButtonRectangle okButton = (ButtonRectangle) view.findViewById(R.id.buttonRectangle);
+        final MaterialDialog mMaterialDialog = new MaterialDialog(getActivity())
+                .setView(view);
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mMaterialDialog.dismiss();
+            }
+        });
+        mMaterialDialog.show();
+        return true;
     }
 
     @OnClick(R.id.frame_1)
