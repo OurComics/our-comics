@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.ourcomics.ourcomics.R;
@@ -28,6 +30,7 @@ public class Fragment2 extends Fragment {
     private boolean frameClick2 = true;
     private boolean frameClick3 = true;
     private boolean frameClick4 = true;
+    private int translateCount = 0;
 
     @InjectView(R.id.frame_1)
     ImageView frame1;
@@ -45,6 +48,8 @@ public class Fragment2 extends Fragment {
     boolean transLate1() {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.translate_edit, null);
+        TextView explain = (TextView) view.findViewById(R.id.explain);
+        explain.setText("８千人‥");
         ButtonRectangle okButton = (ButtonRectangle) view.findViewById(R.id.buttonRectangle);
         final MaterialDialog mMaterialDialog = new MaterialDialog(getActivity())
                 .setView(view);
@@ -52,16 +57,22 @@ public class Fragment2 extends Fragment {
             @Override
             public void onClick(View v) {
                 mMaterialDialog.dismiss();
+                showDialog();
+                translateCount++;
+                if(translateCount == 2) {
+                    sendTranslate();
+                }
             }
         });
         mMaterialDialog.show();
         return true;
     }
 
-    @OnLongClick(R.id.frame_3)
-    boolean transLate3() {
+    public void showDialog() {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.translate_edit, null);
+        TextView explain = (TextView) view.findViewById(R.id.explain);
+        explain.setText("毎年8千人が全国に81ある大学医学部を卒業してゆく");
         ButtonRectangle okButton = (ButtonRectangle) view.findViewById(R.id.buttonRectangle);
         final MaterialDialog mMaterialDialog = new MaterialDialog(getActivity())
                 .setView(view);
@@ -69,6 +80,31 @@ public class Fragment2 extends Fragment {
             @Override
             public void onClick(View v) {
                 mMaterialDialog.dismiss();
+                if(translateCount == 2) {
+                    sendTranslate();
+                }
+            }
+        });
+        mMaterialDialog.show();
+    }
+
+    @OnLongClick(R.id.frame_3)
+    boolean transLate3() {
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View view = inflater.inflate(R.layout.translate_edit, null);
+        TextView explain = (TextView) view.findViewById(R.id.explain);
+        explain.setText("君たちはその8千人のトップの80人である！");
+        ButtonRectangle okButton = (ButtonRectangle) view.findViewById(R.id.buttonRectangle);
+        final MaterialDialog mMaterialDialog = new MaterialDialog(getActivity())
+                .setView(view);
+        okButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mMaterialDialog.dismiss();
+                translateCount++;
+                if(translateCount == 2) {
+                    sendTranslate();
+                }
             }
         });
         mMaterialDialog.show();
@@ -126,6 +162,28 @@ public class Fragment2 extends Fragment {
         View view = inflater.inflate(R.layout.main_page1, null);
         ButterKnife.inject(this, view);
         return view;
+    }
+
+    public void sendTranslate() {
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View view = inflater.inflate(R.layout.confirm_dialog, null);
+        final MaterialDialog mMaterialDialog = new MaterialDialog(getActivity())
+                .setTitle("送信")
+                .setView(view);
+        mMaterialDialog
+                .setNegativeButton("cancel", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mMaterialDialog.dismiss();
+                    }
+                })
+                .setPositiveButton("Ok", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mMaterialDialog.dismiss();
+                        Toast.makeText(getActivity(), "翻訳した内容を送信しました。", Toast.LENGTH_LONG).show();
+                    }
+                }).show();
     }
 
 }
