@@ -1,14 +1,14 @@
 package com.ourcomics.ourcomics.activity;
 
-import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RatingBar;
 
 import com.ourcomics.ourcomics.R;
-import com.ourcomics.ourcomics.fragment.HomeFragment;
-import com.ourcomics.ourcomics.model.GridViewCard;
+import com.ourcomics.ourcomics.model.GridListViewCard;
+import com.ourcomics.ourcomics.model.TranslatedGridViewCard;
 
 import java.util.ArrayList;
 
@@ -17,30 +17,27 @@ import it.gmariotti.cardslib.library.internal.CardGridArrayAdapter;
 import it.gmariotti.cardslib.library.internal.CardHeader;
 import it.gmariotti.cardslib.library.view.CardGridView;
 
-
-public class MainActivity extends ActionBarActivity implements HomeFragment.OnFragmentInteractionListener {
+public class TranslatedActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_translated);
         ArrayList<Card> cards = new ArrayList<Card>();
 
-        for (int i = 0; i < 10; i++) {
-            //Create a Card
-            GridViewCard card = new GridViewCard(this, String.valueOf(i + 1));
 
-            //Create a CardHeader
-            CardHeader header = new CardHeader(this);
-            //Add Header to card
-            card.addCardHeader(header);
-            cards.add(card);
-        }
+        TranslatedGridViewCard card = new TranslatedGridViewCard(this);
 
-        CardGridArrayAdapter mCardArrayAdapter = new CardGridArrayAdapter(this,cards);
+        //Create a CardHeader
+        CardHeader header = new CardHeader(this);
+        //Add Header to card
+        card.addCardHeader(header);
+        cards.add(card);
+
+        CardGridArrayAdapter mCardArrayAdapter = new CardGridArrayAdapter(this, cards);
 
         CardGridView gridView = (CardGridView) findViewById(R.id.myGrid);
-        if (gridView!=null){
+        if (gridView != null) {
             gridView.setAdapter(mCardArrayAdapter);
         }
     }
@@ -49,7 +46,7 @@ public class MainActivity extends ActionBarActivity implements HomeFragment.OnFr
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_translated, menu);
         return true;
     }
 
@@ -66,10 +63,5 @@ public class MainActivity extends ActionBarActivity implements HomeFragment.OnFr
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 }

@@ -44,6 +44,13 @@ public class Fragment2 extends Fragment {
     @InjectView(R.id.frame_4)
     ImageView frame4;
 
+
+    @InjectView(R.id.check1)
+    ImageView check1;
+
+    @InjectView(R.id.check2)
+    ImageView check2;
+
     @OnLongClick(R.id.frame_1)
     boolean transLate1() {
         LayoutInflater inflater = getActivity().getLayoutInflater();
@@ -80,6 +87,7 @@ public class Fragment2 extends Fragment {
             @Override
             public void onClick(View v) {
                 mMaterialDialog.dismiss();
+                check1.setVisibility(View.VISIBLE);
                 if(translateCount == 2) {
                     sendTranslate();
                 }
@@ -102,6 +110,7 @@ public class Fragment2 extends Fragment {
             public void onClick(View v) {
                 mMaterialDialog.dismiss();
                 translateCount++;
+                check2.setVisibility(View.VISIBLE);
                 if(translateCount == 2) {
                     sendTranslate();
                 }

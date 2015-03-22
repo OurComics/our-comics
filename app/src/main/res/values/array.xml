@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="drawer_item">
+        <item>ホーム</item>
+        <item>翻訳した作品</item>
+        <item>みんなの翻訳</item>
+        <item>お気に入り</item>
+        <item>しおり</item>
+        <item>本を買う</item>
+        <item>メッセージ</item>
+        <item>ログアウト</item>
+        <item></item>
+    </string-array>
+</resources>

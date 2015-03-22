@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ourcomics_logo"
         android:label="アワコミ"
         android:theme="@style/AppOurComics" >
         <activity
@@ -17,16 +17,21 @@
         </activity>
         <activity
             android:name=".activity.RegisterActivity"
-            android:label="@string/title_activity_register" >
+            android:label="新規登録" >
         </activity>
         <activity
             android:name=".activity.MainListActivity"
-            android:label="アワコミ" >
+            android:label="アワコミ"
+            android:theme="@style/AppOurComicsNoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.TranslatedActivity"
+            android:label="翻訳した作品" >
         </activity>
     </application>
 

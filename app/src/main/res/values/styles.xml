@@ -19,6 +19,14 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="AppOurComicsNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- your app branding color for the app bar -->
+        <item name="colorPrimary">@color/base_color</item>
+        <!-- darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">@color/base_color</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
     <style name="actionBar" parent="Widget.AppCompat.ActionBar">
         <!-- タイトルバーの背景色 -->
         <item name="android:background">#00BFFF</item>

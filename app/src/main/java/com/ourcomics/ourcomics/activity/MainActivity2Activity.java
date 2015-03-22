@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewParent;
+import android.widget.ImageView;
 
 import com.ourcomics.ourcomics.R;
 import com.ourcomics.ourcomics.adapter.MyFragmentStatePagerAdapter;

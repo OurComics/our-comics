@@ -89,6 +89,10 @@
     <orderEntry type="library" exported="" name="cardslib-cards-2.0.1" level="project" />
     <orderEntry type="library" exported="" name="imagezoom-2.1.1" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-21.0.0" level="project" />
+    <orderEntry type="library" exported="" name="material-menu-toolbar-1.5.1" level="project" />
+    <orderEntry type="library" exported="" name="androidbootstrap-1.2.1" level="project" />
+    <orderEntry type="library" exported="" name="material-menu-abc-1.5.1" level="project" />
+    <orderEntry type="library" exported="" name="material-menu-1.5.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="cardslib-extra-staggeredgrid-2.0.1" level="project" />
     <orderEntry type="library" exported="" name="library-1.2.2" level="project" />

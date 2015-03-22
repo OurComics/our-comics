@@ -1,5 +1,6 @@
 package com.ourcomics.ourcomics.fragment;
 
+import android.content.Intent;
 import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.ourcomics.ourcomics.R;
+import com.ourcomics.ourcomics.activity.RegisterActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -96,19 +98,31 @@ public class Fragment1 extends Fragment {
 
     @OnLongClick(R.id.frame_4)
     boolean transLate4() {
-        LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.translate_edit, null);
-        ButtonRectangle okButton = (ButtonRectangle) view.findViewById(R.id.buttonRectangle);
-        final MaterialDialog mMaterialDialog = new MaterialDialog(getActivity())
-                .setView(view);
-        okButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mMaterialDialog.dismiss();
-            }
-        });
-        mMaterialDialog.show();
+        showDialog();
         return true;
+    }
+
+    public void showDialog() {
+        final MaterialDialog mMaterialDialog = new MaterialDialog(getActivity())
+                .setMessage("翻訳をする場合登録が必要です。");
+
+        mMaterialDialog
+                .setNegativeButton("cancel", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mMaterialDialog.dismiss();
+                    }
+                })
+                .setPositiveButton("登録する", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mMaterialDialog.dismiss();
+                        Intent intent = new Intent(getActivity(), RegisterActivity.class);
+                        startActivity(intent);
+                        getActivity().finish();
+                    }
+                })
+                .show();
     }
 
     @OnClick(R.id.frame_1)

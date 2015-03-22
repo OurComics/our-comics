@@ -39,6 +39,9 @@ public class GridListViewCard extends Card {
                     R.drawable.bj_10,
                     R.drawable.bj_11,
                     R.drawable.bj_12,
+                    R.drawable.bj_13,
+                    R.drawable.bj_11,
+                    R.drawable.bj_12,
                     R.drawable.bj_13};
 
 

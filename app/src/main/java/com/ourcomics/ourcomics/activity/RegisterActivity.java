@@ -1,5 +1,6 @@
 package com.ourcomics.ourcomics.activity;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.ourcomics.ourcomics.R;
 
+import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
@@ -15,6 +17,8 @@ public class RegisterActivity extends ActionBarActivity {
 
     @OnClick(R.id.ok)
     void finishActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
         finish();
     }
 
@@ -22,6 +26,7 @@ public class RegisterActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        ButterKnife.inject(this);
     }
 
 
