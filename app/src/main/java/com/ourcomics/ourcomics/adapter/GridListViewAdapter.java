@@ -23,20 +23,6 @@ public class GridListViewAdapter extends BaseAdapter {
             "ブラックジャックによろしく","ブラックジャックによろしく","ブラックジャックによろしく"
     };
 
-    private String[] storyArray = {
-            "1話", "2話", "3話", "4話","5話",
-            "6話", "7話", "8話", "9話","10話",
-            "11話", "12話", "13話"
-
-    };
-
-    private String[] infoArray = {
-            "佐藤秀峰","佐藤秀峰","佐藤秀峰","佐藤秀峰","佐藤秀峰",
-            "佐藤秀峰","佐藤秀峰","佐藤秀峰","佐藤秀峰","佐藤秀峰",
-            "佐藤秀峰","佐藤秀峰","佐藤秀峰"
-    };
-
-
     private Integer[] mHueIdArray = {
             R.drawable.bla
     };
@@ -80,10 +66,8 @@ public class GridListViewAdapter extends BaseAdapter {
         }
 
 
-        holder.iconView.setImageResource(mHueIdArray[0]);
+        holder.iconView.setImageDrawable(mContext.getResources().getDrawable(mHueIdArray[position]));
         holder.titleTextView.setText(mHueArray[position]);
-        holder.story.setText(storyArray[position]);
-        holder.info.setText(infoArray[position]);
 
         return convertView;
     }
